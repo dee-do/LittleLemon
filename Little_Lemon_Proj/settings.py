@@ -76,9 +76,18 @@ WSGI_APPLICATION = 'Little_Lemon_Proj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.mysql',   
+        'NAME': 'littlelemon_capstone',   
+        'USER': 'summer',   
+        'PASSWORD': 'summer723*',   
+        'HOST': '127.0.0.1',   
+        'PORT': '3306',   
+        'OPTIONS': {   
+            #MySQL converts an invalid value to the closest valid value for the column and inserts the adjusted value. 
+            # If a value is missing, MySQL inserts the implicit default value for the column data type. I
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'" 
+            }
+        }
 }
 
 
