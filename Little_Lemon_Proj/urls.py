@@ -29,5 +29,7 @@ urlpatterns = [
     path('restaurant/booking/', include (router.urls)),
     path('admin/', admin.site.urls),
     path('restaurant/', include('Little_Lemon_App.urls')),
+    path('auth/', include('djoser.urls')),
+    path('auth/',include('djoser.urls.authtoken')),
     
 ]
