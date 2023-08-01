@@ -11,13 +11,14 @@ def index(request):
 # GET and POST
 class MenuItemsView(generics.ListCreateAPIView):
     
-    permission_classes = [IsAuthenticated]
+    #permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
-#DELETE, GET detail and PUT
-class SingleMenuItemView(generics.DestroyAPIView, generics.RetrieveUpdateAPIView):
-    pass
+#GET, UPDATE and DELETE single item, detail view
+class SingleMenuItemView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Menu.objects.all()
+    serializer_class = MenuSerializer
 
 
 #this viewset provides list, create, retrieve, update and destroy actions 
