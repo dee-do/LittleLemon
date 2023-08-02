@@ -11,7 +11,7 @@ from rest_framework.test import force_authenticate, APIClient
 #initialize the APIClient
 client = APIClient()
 
-#test module for GET all menu items
+#test module for GET all menu items------------------------
 class GetAllMenuItems(TestCase):
     #use this method to add some test instances of menu items
     def setUp(self):
@@ -33,7 +33,7 @@ class GetAllMenuItems(TestCase):
         self.assertEqual(response.status_code,status.HTTP_200_OK )
 
 
-#test for GET all bookings
+#test for GET all bookings-----------------------------
 class GetAllBookings(TestCase):
     #use this method to add some test instances of bookings
     def setUp(self):
@@ -56,7 +56,7 @@ class GetAllBookings(TestCase):
 
 
 
-#test module for creating a new menu item (POST)
+#test module for creating a new menu item (POST)-------------------------------
 class CreateNewMenuItem(TestCase):
 
     def setUp(self):
@@ -92,7 +92,7 @@ class CreateNewMenuItem(TestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
-#test module for creating a new booking (POST)
+#test module for creating a new booking (POST)---------------------------
 class CreateNewBooking(TestCase):
 
     def setUp(self):
@@ -130,7 +130,7 @@ class CreateNewBooking(TestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
 
-#test for updating an existing menu item (PUT)
+#test for updating an existing menu item (PUT)-----------------------------------
 class UpdateSingleMenuItem(TestCase):
 
     def setUp(self):
@@ -166,7 +166,7 @@ class UpdateSingleMenuItem(TestCase):
                             )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-
+#test for updating an existing booking (PUT)--------------------------------------------
 class UpdateSingleBooking(TestCase):
     def setUp(self):
         user = User.objects.create_user('user6', 'Pas$w0rD6')
