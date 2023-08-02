@@ -16,17 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
+#from rest_framework.routers import DefaultRouter
 from Little_Lemon_App import views
 
-router = DefaultRouter()
+""" router = DefaultRouter()
 #tables below is the url prefix i.e. the url will be restaurant/booking/tables
-router.register(r'tables', views.BookingViewSet)
-
-
+#router.register('tables', views.BookingViewSet)
+router.register('bookings', views.BookingViewSet)
+router.register('bookings/<int:pk>', views.SingleBookingView.as_view())
+ """
 
 urlpatterns = [
-    path('restaurant/booking/', include (router.urls)),
+    #path('restaurant/', include (router.urls)),
     path('admin/', admin.site.urls),
     path('restaurant/', include('Little_Lemon_App.urls')),
     path('auth/', include('djoser.urls')),
